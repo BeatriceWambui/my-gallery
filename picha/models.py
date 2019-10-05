@@ -11,3 +11,9 @@ class User(models.Model):
         return self.first_name
     class Meta:
         ordering = ['first_name']
+
+class category(models.Model):
+    name = models.CharField(max_length = 30)
+
+    def __str__(self):
+        return self.name
