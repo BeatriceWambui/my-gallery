@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 
 class User(models.Model):
-    first_name = models.CharField(max_length =30)
-    last_name = models.CharField(max_length =30)
+    first_name = models.CharField(max_length =40)
+    last_name = models.CharField(max_length =40)
     email = models.EmailField()
 
     def __str__(self):
@@ -12,8 +12,9 @@ class User(models.Model):
     class Meta:
         ordering = ['first_name']
 
-class category(models.Model):
-    name = models.CharField(max_length = 30)
+class Category(models.Model):
+    name = models.CharField(max_length = 40)
 
     def __str__(self):
         return self.name
+
