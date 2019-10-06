@@ -2,21 +2,17 @@ from django.db import models
 
 # Create your models here.
 
-# class User(models.Model):
-#     first_name = models.CharField(max_length =40)
-#     last_name = models.CharField(max_length =40)
-#     email = models.EmailField()
-
-#     def __str__(self):
-#         return self.first_name
-#     class Meta:
-#         ordering = ['first_name']
-
 class Category(models.Model):
     name = models.CharField(max_length = 40)
 
     def __str__(self):
         return self.name
+
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()
 
 class Location(models.Model):
     name = models.CharField(max_length=50)
@@ -24,10 +20,17 @@ class Location(models.Model):
     def __str__(self):
         return self.name
 
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
+
 class Image(models.Model):
     image = models.ImageField(upload_to = 'images/')
     image_name = models.CharField(max_length = 40)
     image_description = models.TextField()
+    editor = models.CharField(max_length=50,default='admin')
     category = models.ForeignKey(Category)
     location = models.ForeignKey(Location)
 
@@ -38,5 +41,11 @@ class Image(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
 
 
