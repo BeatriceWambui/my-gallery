@@ -25,10 +25,16 @@ class Location(models.Model):
         return self.name
 
 class Image(models.Model):
+    image = models.ImageField(upload_to = 'images/')
     image_name = models.CharField(max_length = 40)
     image_description = models.TextField()
     category = models.ForeignKey(Category)
     location = models.ForeignKey(Location)
+
+    @classmethod
+    def search_by_category(cls,category):
+        photo=cls.objects.filter(category__name__icontains=category)
+        return photo
 
     def __str__(self):
         return self.name
