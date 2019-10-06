@@ -3,8 +3,10 @@ from .models import Image,Location
 # import datetime as dt
 # Create your views here.
 
-def welcome(request):
-    return render (request,'index.html')
+def index(request):
+    images = Image.objects.all()
+   
+    return render (request,'all-photos/index.html',{'images':images})
 
 def personal_photos(request):
     return render (request,'all-photos/personal-photos.html')
@@ -15,10 +17,10 @@ def hobby_photos(request):
 def search_results(request):
     if 'image'in request.GET and request.GET['image']:
         search_term = request.GET.get('image')
-        searched_images = Image.searched_by_category(search_term)
+        searched_images = Image.search_by_category(search_term)
 
         message = f'{search_term}'
-
+        print(searched_images)
         return render(request, 'all-photos/search.html',{'message':message,'images':searched_images})
 
     else:

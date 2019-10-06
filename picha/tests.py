@@ -5,7 +5,7 @@ from .models import Category,Location,Image
 class CategoryTestClass(TestCase):
     #Set up method
     def setUp(self):
-        self.category = Category(name='home')
+        self.category = Category(name='welcome')
         self.category.save_category()
 
     def test_instance(self):
@@ -23,7 +23,7 @@ class CategoryTestClass(TestCase):
 
 class LocationTestCase(TestCase):
         def setUp(self):
-        self.location = Location(name='Moringa')
+        self.location = Location(name='mountain')
         self.location.save_location()
 
     def test_instance(self):
