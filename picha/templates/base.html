@@ -26,6 +26,14 @@
   
   {%endblock%}
   {% block scripts %}
+  <script type="">
+      function myFunction() {
+        var copyText = document.getElementById("myInput").copyText.select(); 
+        copyText.setSelectionRange(0, 99999); 
+        document.execCommand("copy");
+        alert("Copied the text: " + copyText.value);
+      }
+      </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% bootstrap_javascript %}
   {% endblock %}
