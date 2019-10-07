@@ -1,20 +1,24 @@
 {% extends 'base.html'%}
 
 {% block content %}
-{{block.super}}
+{{block.super}} 
+<div id="betty">
+<div class="container-fluid">
+
+  <!-- <img src="/static/mine1.jpg"  class="img-fluid" alt='mine' id='mine'> <br> -->
 
 <div class="card-columns">
 
 {% if images%}
 {% for image in images %}
-<div class="container">
-  <div class="card" style="width: 25rem;">
-      <img src="{{image.image.url}}" height="300vh"  class="card-img-top" alt="" data-toggle="modal" data-target="#exampleModalCenter{{image.id}}">
+  <div class="card" style="width: 20rem;">
+      <img src="{{image.image.url}}" height="200vh"  class="card-img-top" alt="" data-toggle="modal" data-target="#exampleModalCenter{{image.id}}">
       
       <div class="card-body">
         <p class="card-text">Images by Beatrice</p>
       </div>
   </div>
+  
 <div class="modal fade" id="exampleModalCenter{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered" role="document">
 <div class="modal-content">
@@ -36,12 +40,12 @@
 </div>
 </div>
 </div>
-</div>
 
 {% endfor %}
 {% endif %}
 </div>
-
+</div>
+</div>
 {% endblock %}
 
 

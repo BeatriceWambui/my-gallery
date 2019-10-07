@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 h1{
-    color: red;
-    font-family: 'Lobster', cursive;
+    color: rgb(200, 143, 188);
+    text-shadow: 5px 5px rgb(10, 10, 10);
+    font-size: 80px;
+    background-color: rgb(5, 5, 7);
+
+}
+#betty{
+    background-color: rgb(221, 198, 216);
 }
