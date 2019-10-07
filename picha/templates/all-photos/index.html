@@ -3,7 +3,7 @@
 {% block content %}
 {{block.super}} 
 <div id="betty">
-<div class="container-fluid">
+<div class="container">
 
   <!-- <img src="/static/mine1.jpg"  class="img-fluid" alt='mine' id='mine'> <br> -->
 
@@ -13,10 +13,7 @@
 {% for image in images %}
   <div class="card" style="width: 20rem;">
       <img src="{{image.image.url}}" height="200vh"  class="card-img-top" alt="" data-toggle="modal" data-target="#exampleModalCenter{{image.id}}">
-      
-      <div class="card-body">
-        <p class="card-text">Images by Beatrice</p>
-      </div>
+ 
   </div>
   
 <div class="modal fade" id="exampleModalCenter{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
