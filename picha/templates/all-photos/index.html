@@ -3,11 +3,13 @@
 {% block content %}
 {{block.super}}
 <h1>When will you shoot your shot</h1>
+<div class="card-columns">
+
 {% if images%}
 {% for image in images %}
 <div class="container">
-  <div class="card" style="width: 18rem;">
-      <img src="{{image.image.url}}" class="card-img-top" alt="" data-toggle="modal" data-target="#exampleModalCenter{{image.id}}">
+  <div class="card" style="width: 25rem;">
+      <img src="{{image.image.url}}" height="300vh"  class="card-img-top" alt="" data-toggle="modal" data-target="#exampleModalCenter{{image.id}}">
       
       <div class="card-body">
         <p class="card-text">Images by Beatrice</p>
@@ -28,7 +30,7 @@
 </div>
 <div class="modal-footer">
     <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="{{image.id}}.url">
-<button class="btn btn-success btn-sm">Copy</button>
+<button class="btn btn-success btn-sm" onclick="myFunction()">Copy</button>
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 </div>
 </div>
@@ -38,6 +40,8 @@
 
 {% endfor %}
 {% endif %}
+</div>
+
 {% endblock %}
 
 

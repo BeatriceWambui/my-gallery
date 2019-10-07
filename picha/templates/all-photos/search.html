@@ -11,15 +11,18 @@
 
   </div>
 
+  
+
   <div class="row">
 
   {% if images %}
     {% for image in images %}
-      <div class="col-sm-3 col-md-3">
-          <img src="{{image.image.url}}" alt="" data-toggle="modal" data-target="#exampleModalCenter">
+  
+      <div class="card" style="width:24rem" >
+          <img src="{{image.image.url}}" height="300rem" alt="" data-toggle="modal" data-target="#exampleModalCenter{{image.id}}">
       </div>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
